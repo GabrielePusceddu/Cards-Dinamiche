@@ -1,0 +1,96 @@
+<html>
+
+<head>
+    <title>
+        Card Dinamiche
+    </title>
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container my-4">
+        <div class="btn-group mb-4" role="group" aria-label="Category Filters">
+            <button type="button" class="btn btn-primary" onclick="filterCards('all')">Tutte</button>
+            <button type="button" class="btn btn-secondary"
+                onclick="filterCards('elettrodomestici')">Elettrodomestici</button>
+            <button type="button" class="btn btn-secondary" onclick="filterCards('smartphone')">Smartphone</button>
+            <button type="button" class="btn btn-secondary" onclick="filterCards('pc')">PC</button>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 card-category elettrodomestici">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Frigorifero</h5>
+                        <p class="card-text">Un frigorifero moderno ed efficiente.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 card-category smartphone">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Smartphone XYZ</h5>
+                        <p class="card-text">Un fantastico smartphone con molte funzionalità.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 card-category pc">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Laptop ABC</h5>
+                        <p class="card-text">Un laptop potente per tutte le esigenze.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 card-category elettrodomestici">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Lavatrice</h5>
+                        <p class="card-text">Una lavatrice ad alta efficienza energetica.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 card-category smartphone">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Smartphone ABC</h5>
+                        <p class="card-text">Un altro fantastico smartphone.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 card-category pc">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Desktop XYZ</h5>
+                        <p class="card-text">Un desktop per tutte le esigenze lavorative.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        function filterCards(category) {
+            let cards = document.getElementsByClassName('card-category');
+            if (category == 'all') {
+                for (let i = 0; i < cards.length; i++) {
+                    cards[i].style.display = 'block';
+                }
+            } else {
+                for (let i = 0; i < cards.length; i++) {
+                    if (cards[i].classList.contains(category)) {
+                        cards[i].style.display = 'block';
+                    } else {
+                        cards[i].style.display = 'none';
+                    }
+                }
+            }
+        }
+        filterCards('all');
+    </script>
+
+
+    <script src="JS/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
